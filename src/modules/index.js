@@ -34,7 +34,7 @@ module.exports.updateJob = async (req, res, next) => {
             .collection("jobs")
             .findOneAndUpdate(
                 { _id: ObjectId(req.params.jobId) },
-                { $set: { ...req.body.job } },
+                { $set: { ...req.body } },
                 { returnOriginal: true }
             );
         res.send(updatedData);
